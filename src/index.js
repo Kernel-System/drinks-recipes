@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import CategoriesProvider from './contexts/Categories/context'
+import ModalProvider from './contexts/Modal/context'
+import RecipesProvider from './contexts/Recipes/context'
+import './index.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ModalProvider>
+    {' '}
+    <RecipesProvider>
+      <CategoriesProvider>
+        <App />
+      </CategoriesProvider>
+    </RecipesProvider>
+  </ModalProvider>,
   document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)
