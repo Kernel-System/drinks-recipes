@@ -9,7 +9,6 @@ import './index.css'
 
 ReactDOM.render(
   <ModalProvider>
-    {' '}
     <RecipesProvider>
       <CategoriesProvider>
         <App />
